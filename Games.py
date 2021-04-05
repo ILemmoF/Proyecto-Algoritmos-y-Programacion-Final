@@ -345,7 +345,7 @@ class Games ():
                         if self.clues > 0:
                             #Pista para aquellas personas que no supieran derivar y quisieran probar el juego.
                             answer = input("""
-    Si escribes la palabra "paso" como respuesta, te saltarás la prueba.""")
+    Si escribes la palabra "paso" como respuesta, te saltarás la prueba: """)
                             self.clues = self.clues - 1
                         else:
                             answer = input("""
@@ -579,7 +579,7 @@ class Games ():
     Ingresa la respuesta del desafio: """)
                     try: 
                         #Se definen todas las posibles respuestas correctas.
-                        if eval(answer) == (int(float((((((question["question"]).split('"'))[1]).replace(",",".")).split(" "))[-2]))): #or eval(answer) == ((((question["question"]).split('"'))[-2])[::-1]) or eval(answer) == "estudio en la metro ingenieria de sistemas" or answer == "estudio en la metro ingenieria de sistemas"
+                        if (eval(answer) == (int(float((((((question["question"]).split('"'))[1]).replace(",",".")).split(" "))[-2])))): #or (eval(answer) == ((((question["question"]).split('"'))[-2])[::-1])) or (eval(answer) == "estudio en la metro ingenieria de sistemas") or (answer == "estudio en la metro ingenieria de sistemas"):
                             print(f"""
     Respuesta correcta, la recompensa se añadió a tu inventario.""")
                             self.inventory.append(award)

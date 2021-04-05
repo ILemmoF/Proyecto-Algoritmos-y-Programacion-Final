@@ -348,3 +348,5 @@
 # print((((question["question"]).split('"'))[-2])[::-1])
 
 #or eval(answer) == ((((question["question"]).split('"'))[-2])[::-1]) or eval(answer) == "estudio en la metro ingenieria de sistemas" or answer == "estudio en la metro ingenieria de sistemas"
+# import random
+# print(random.randint(0,2))
