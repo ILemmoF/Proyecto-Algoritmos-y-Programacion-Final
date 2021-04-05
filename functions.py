@@ -225,7 +225,6 @@ def statistics():
     -------------------------""")
                 top += 1
         elif option == "2":
-            top_counter = 0
             list_of_times = []
             user_names = []
             with open ("Games_Played.txt", "r") as users_database:
@@ -242,11 +241,10 @@ def statistics():
             times_names = dict(zip(names, list_of_times))
             for users, number in sorted(times_names.items(), key=operator.itemgetter(1)):
                 print(f"""
-    ------------Top {top_counter + 1}-------------
+    -----------------------------
     Jugador: {users}
     Veces jugadas: {number} 
     ------------------------------""")
-                top_counter += 1
         elif option == "3":
             break
         else:

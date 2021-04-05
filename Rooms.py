@@ -315,7 +315,7 @@ class Rooms ():
                     if Games.juego_de_puerta(self):
                         end_game(self.tic, log_user_name, self.difficulty)
                     else:
-                    #En caso de que no haya sido completada, el juego seguirá con normalidad.
+                    #En caso de que no haya sido completada, el juego seguirá corriendo.
                         option = input(f"""
     Te quedan {self.lifes} vidas y {self.clues} pistas. Inventario: {self.inventory}
     ¿Que deseas hacer?

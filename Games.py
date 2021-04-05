@@ -706,7 +706,7 @@ class Games ():
         if requirement == False:
             requirement = "Ninguno"
         #Se imprimen los mensajes escritos en la API.
-            print(f"""
+        print(f"""
     Para acceder a la recompensa de este juego ({award}) deberas superar este desafio:
     {name}
     {message_requirement}
