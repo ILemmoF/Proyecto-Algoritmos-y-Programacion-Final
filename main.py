@@ -1,5 +1,7 @@
+#Función principal de todo el proyecto.
 def main ():
     import functions
+    #Mensaje de Bienvenida.
     print("""
     Bienvenido a mi proyecto de Algoritmos y Programación. Para este trimestre
     correspondia realizar un Scape Room y podría decirse que lo he logrado.
@@ -35,7 +37,8 @@ def main ():
     2. Medio. (3 vidas, 3 pistas y 10 minutos)
     3. Dificil. (1 vida, 2 pistas y 5 minutos)
     4. Sandbox. (Tú seleccionas el tiempo, las vidas y las pistas deseadas para jugar.)
-    """)
+    """)        
+                #Llamamiento a la función que da inicio al juego
                 functions.game_begin(difficulty, log_user_name)
             else: 
                 login_or_register = input("""

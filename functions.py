@@ -119,6 +119,7 @@ def register ():
     age = input("""
     Ingrese su edad: """)
     age = ok_age(age)
+    #Llamamiento a la clase que registra a los usuarios en el archivo .txt
     New_Users(user_name, password, avatar, age)
     return True
 
@@ -157,12 +158,14 @@ def game_begin (difficulty, log_user_name):
     (Si o No): """).lower()
     while True:
         if begin == "si":
+            #Empieza a contar el tiempo.
             tic = time.perf_counter()
             inventory = ["Ninguno"] 
             print("""
     Bienvenido, gracias por tu disposición a ayudarnos a resolver este inconveniente,  
     te encuentras actualmente ubicado en la biblioteca, revisa el menú de opciones para ver qué acciones 
     puedes realizar. Recuerda que el tiempo corre más rápido que un trimestre en este reto.""")
+            #Llamamiento a la clase de Rooms para ir a la Biblioteca.
             Rooms(log_user_name, lifes, clues, inventory, tic, difficulty)
             break
         if begin == "no":
@@ -196,6 +199,7 @@ def statistics():
                 info = statistics_info.split(":")
                 times.append(float(info[0]))
             times = sorted(times)
+            #Definir los 5 mejores tiempos.
             top_5.append(times[0])
             top_5.append(times[1])
             top_5.append(times[2])
@@ -226,10 +230,12 @@ def statistics():
             user_names = []
             with open ("Games_Played.txt", "r") as users_database:
                 users_info = users_database.readlines()
+            #Nombre de los jugadores que han jugado.
             for users_and_passwords in users_info:
                 user_and_password = users_and_passwords[:-1].split(":")
                 user_names.append(user_and_password[3])
             names = list(set(user_names))
+            #Contador de veces jugadas.
             for name in names:
                 times = user_names.count(name)
                 list_of_times.append(times)

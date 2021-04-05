@@ -42,6 +42,15 @@ class Rooms ():
                 elif option == "2":
                     Games(self.lifes, self.clues, self.inventory, self.tic)
                     Games.juego_saman(self)
+                    option = input(f"""
+    Te quedan {self.lifes} vidas y {self.clues} pistas. Inventario: {self.inventory}
+    ¿Que deseas hacer?
+    1. Avanzar al Banco 1 (lado izquierdo de la plaza).
+    2. Avanzar el Saman (centro de la plaza).
+    3. Avanzar al Banco 2 (lado derecho de la plaza).
+    4. Salir de la habitación y dirigirte a la Biblioteca.
+    0. Terminar partida.
+    """)
                 elif option == "3":
                     Games(self.lifes, self.clues, self.inventory, self.tic)
                     Games.juego_banco2(self)
@@ -175,11 +184,11 @@ class Rooms ():
     3. Salir de la habitación y dirigirte al Laboratorio SL001.
     0. Terminar partida.
     """)
-                elif option == "3" and "martillo" in self.inventory:
+                elif option == "3" and "libro de Física" in self.inventory:
                     Rooms.laboratorios_SL001(self, log_user_name)
-                elif option == "3" and "martillo" not in self.inventory:
+                elif option == "3" and "libro de Física" not in self.inventory:
                     print("""
-    No es posible ingresar al Laboratorio Sl001 sin el martillo.""")
+    No es posible ingresar al Laboratorio Sl001 sin el libro de Física.""")
                     option = input(f"""
     Te quedan {self.lifes} vidas y {self.clues} pistas. Inventario: {self.inventory}
     ¿Que deseas hacer?
@@ -302,9 +311,11 @@ class Rooms ():
     """)
                 elif option == "3":
                     Games(self.lifes, self.clues, self.inventory, self.tic)
+                    #Si la prueba final del proyecto retorna True, indicando que se completó con éxito, el juego se termina llamando a la función end_game.
                     if Games.juego_de_puerta(self):
                         end_game(self.tic, log_user_name, self.difficulty)
                     else:
+                    #En caso de que no haya sido completada, el juego seguirá con normalidad.
                         option = input(f"""
     Te quedan {self.lifes} vidas y {self.clues} pistas. Inventario: {self.inventory}
     ¿Que deseas hacer?
