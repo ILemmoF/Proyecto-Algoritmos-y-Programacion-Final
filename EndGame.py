@@ -24,6 +24,7 @@ def end_game(tic, log_user_name, difficulty):
         print("""
     Lastimosamente no lograste evitar la catástrofe antes de que se te acabara el tiempo.
     Tu tiempo de juego se ha añadido a las estadisticas correctamente.""")
-    #LLamamiento a la clase para guardar las estadisticas de la partida completada.
-    Users_Stats(log_user_name, difficulty, timer, succes)
+    #Generador de estadisticas de la partida completada.
+    stats = Users_Stats(log_user_name, difficulty, timer, succes)
+    #Aquie iba a generar las estadisticas de una manera diferente haciendo el uso del objeto "stats" pero no me daba el tiempo porque se me complicaba el tema de la Herencia.
     exit()

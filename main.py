@@ -19,8 +19,8 @@ def main ():
         if login_or_register == "1":
             log_user_name, check = functions.login()
             if check == True:
-                print("""
-    Sesión iniciada correctamente.""")
+                print(f"""
+    Usuario: {log_user_name.user_name} su sesión ha sido iniciada correctamente.""")
     #Una vez iniciada sesion correctamente, se imprimen las instrucciones y se selecciona la dificultad:
                 print("""
     Instrucciones para jugar:
@@ -50,9 +50,10 @@ def main ():
     """)
     #Opción 2, Registrarse:
         elif login_or_register == "2":
-            if functions.register():
-                print("""
-    Usuario Registrado Correctamente.""")
+            new_user, check_1 = functions.register()
+            if check_1 == True:
+                print(f"""
+    Usuario "{new_user.user_name}" registrado Correctamente.""")
                 login_or_register = input("""
     Seleccione una opción (1, 2, 3 o 4):
     1. Iniciar Sesión.

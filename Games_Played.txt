@@ -4,3 +4,5 @@
 5.050275728333327:Medio:Completado:NachoTC:Scharifker:20
 6.150275728333327:Medio:Completado:NachoTC:Scharifker:20
 3.0036103299999923:Medio:Completado:NachoTC:Scharifker:20
+2.959600316666668:Fácil:Completado:NachoTC:Scharifker:20
+3.1626644633333245:Medio:Completado:NachoTC:Scharifker:20

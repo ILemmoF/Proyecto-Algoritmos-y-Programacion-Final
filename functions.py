@@ -1,4 +1,4 @@
-from Users import New_Users
+import Users
 from Rooms import Rooms
 import time
 import operator
@@ -12,9 +12,10 @@ def check_user_name (user_name):
         user_and_password = users_and_passwords[:-1].split(":")
         taken_user_names.append(user_and_password[0])
     if user_name in taken_user_names:
-        return True
+        user_name = Users.Users(user_name)
+        return user_name, True
     else:
-        return False
+        return user_name, False
 
 #Función para validar que la Contraseña corresponda con el Nombre de Usuario:
 def check_password (user_name, password):
@@ -72,10 +73,11 @@ def ok_clues (clues):
 def login ():
     user_name = input("""
     Ingrese su nombre de Usuario: """)
-    if check_user_name(user_name):
+    user_name, check_2 = check_user_name(user_name)
+    if check_2 == True:
         password = input("""
     Ingrese su Contraseña: """)
-        if check_password (user_name, password):
+        if check_password (user_name.user_name, password):
             return user_name, True
         else: 
             print ("""
@@ -120,8 +122,8 @@ def register ():
     Ingrese su edad: """)
     age = ok_age(age)
     #Llamamiento a la clase que registra a los usuarios en el archivo .txt
-    New_Users(user_name, password, avatar, age)
-    return True
+    new_user = Users.New_Users(user_name, password, avatar, age)
+    return new_user,True
 
 #Función que da inicio al juego:
 def game_begin (difficulty, log_user_name):
@@ -161,12 +163,13 @@ def game_begin (difficulty, log_user_name):
             #Empieza a contar el tiempo.
             tic = time.perf_counter()
             inventory = ["Ninguno"] 
-            print("""
-    Bienvenido, gracias por tu disposición a ayudarnos a resolver este inconveniente,  
+            print(f"""
+    Bienvenido {log_user_name.avatar}, gracias por tu disposición a ayudarnos a resolver este inconveniente,  
     te encuentras actualmente ubicado en la biblioteca, revisa el menú de opciones para ver qué acciones 
     puedes realizar. Recuerda que el tiempo corre más rápido que un trimestre en este reto.""")
             #Llamamiento a la clase de Rooms para ir a la Biblioteca.
-            Rooms(log_user_name, lifes, clues, inventory, tic, difficulty)
+            game = Rooms(log_user_name.user_name, lifes, clues, inventory, tic, difficulty)
+            #Se que debia quizas manejar esta parte como un objeto tambien, pero para el momento que me percaté no podia pensar más :)
             break
         if begin == "no":
             print("""
