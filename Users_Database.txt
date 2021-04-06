@@ -3,6 +3,4 @@ sebastian71:12344321:Gandhi:15
 nauj:naujnauj:Pelusa:15
 Ignacio:87654321:Eugenio Mendoza:20
 Lemmo:12344321:Pelusa:20
-Pedroo:12345678:Pelusa:29
-Pedrooo:12345678:Eugenio Mendoza:50
-Lemmooo:fgbhfdw3wderg:Pelusa:90
+
